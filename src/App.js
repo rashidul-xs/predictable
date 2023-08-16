@@ -53,7 +53,7 @@ class App extends Component {
         editor.addEventListener( 'keyup', e => {
             const predictableContainer = document.getElementById( this.state.predictableContainerId );
             predictableContainer.style.display = 'none';
-
+            console.log( predictableContainer.firstChild );
             if ( predictableContainer &&
                 predictableContainer.firstChild &&
                 predictableContainer.firstChild.firstChild.data !== '' &&
@@ -64,7 +64,7 @@ class App extends Component {
                 this.isCaretAtEnd( editor )
             ) {
                 const incompleteText = document.getSelection().anchorNode;
-
+                console.log( incompleteText)
                 if ( incompleteText ) {
                     const { top, left } = this.getLastWordCoordinates();
                     // We create the visual effect of a placeholder element by overlaying the
